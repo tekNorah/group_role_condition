@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains group_role_condition.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function group_role_condition_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the group_role_condition module.
+    case 'help.page.group_role_condition':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a Condition plugin which checks to see if user group role matches selection') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param string $form_id
+ */
+function group_role_condition_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['visibility']['group_role'])) {
+//    $form['visibility_tabs']['#attached']['library'][] = 'group_role_condition/block';
+    $form['visibility']['group_role']['#title'] = t('Group roles');
+    $form['visibility']['group_role']['negate']['#type'] = 'value';
+    $form['visibility']['group_role']['negate']['#title_display'] = 'invisible';
+    $form['visibility']['group_role']['negate']['#value'] = $form['visibility']['group_role']['negate']['#default_value'];
+  }
+}

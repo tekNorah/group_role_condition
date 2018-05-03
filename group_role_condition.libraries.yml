@@ -1,0 +1,6 @@
+block:
+  version: 'VERSION'
+  js:
+    js/block.js: {}
+  dependencies:
+    - 'block/drupal.block'

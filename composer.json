@@ -1,0 +1,14 @@
+{
+  "name": "drupal/group_role_condition",
+  "type": "drupal-module",
+  "description": "Provides a Condition plugin which checks to see if user group role matches selection",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/group_role_condition",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/group_role_condition",
+    "source": "http://cgit.drupalcode.org/group_role_condition"
+  },
+  "require": { }
+}
