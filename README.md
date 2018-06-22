@@ -1,4 +1,4 @@
-# Drupal Module
+# Drupal Module - Group Role Condition
 
 Provides a Condition plugin which checks to see if user group role matches selection
 
